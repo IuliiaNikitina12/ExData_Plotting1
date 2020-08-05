@@ -11,9 +11,9 @@ data <- read.table("data/household_power_consumption.txt", sep=";")
 names(data) <- data[1, ]
 newdata <- subset(data, data$Date == "2/2/2007" | data$Date == "1/2/2007")
 #download libraries for working with dates and tables
-library(lubritate)
+library(lubridate)
 library(dplyr)
-#add new column to the data set whis is combines date and time
+#add new column to the data set which is combines date and time
 newdata <- mutate(newdata, date_time= paste(newdata$Date, newdata$Time))
 #create plot4
 png(file = "plot4.png")
